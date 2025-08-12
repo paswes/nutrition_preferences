@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "921061114463",
+    "project_id": "nutrilize-preferences",
+    "storage_bucket": "nutrilize-preferences.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:921061114463:android:49356db352deff67a151ea",
+        "android_client_info": {
+          "package_name": "com.example.preferences"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDXXRoNGIN1U8aX2I1WmIKdtzwpWDfrkwM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
