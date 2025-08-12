@@ -10,7 +10,9 @@ class NutritionPreferencesPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        backgroundColor: Colors.tealAccent,
         title: const Text('Ernährung'),
+        elevation: 0,
       ),
       body: BlocBuilder<NutritionPreferencesCubit, NutritionPreferencesState>(
         builder: (context, state) {
