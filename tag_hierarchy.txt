@@ -1,7 +1,3 @@
-TASK: reasonable UX-flow in the app to exlcude categories, allergens, specific foods
-
-
-
 kernels - Kerne (type: category)
  |--grapeSeeds - Traubenkerne (type: category)
  |--pineNuts - Pinienkerne (type: category)
