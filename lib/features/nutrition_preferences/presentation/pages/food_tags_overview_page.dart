@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:preferences/features/nutrition_preferences/domain/utils/food_tags_list_util.dart';
 import 'package:preferences/features/nutrition_preferences/domain/entities/food_tag_entity.dart';
 import 'package:preferences/features/nutrition_preferences/presentation/cubit/nutrition_preferences_cubit.dart';
 import 'package:preferences/features/nutrition_preferences/presentation/widgets/food_tags_list.dart';
@@ -24,7 +25,9 @@ class _FoodTagsOverviewPageState extends State<FoodTagsOverviewPage> {
   @override
   void initState() {
     super.initState();
-    _flattenedTags = widget.preferencesCubit.state.flattenedTags;
+    _flattenedTags = FoodTagsListUtil.getFlattenedTags(
+      widget.preferencesCubit.state.availableFoodTags,
+    );
   }
 
   void _onSearchChanged(String query) {
@@ -86,9 +89,14 @@ class _FoodTagsOverviewPageState extends State<FoodTagsOverviewPage> {
                       return const _NoResultsFound();
                     }
 
+                    final structuredFoodTags =
+                        FoodTagsListUtil.getStructuredTags(
+                      state.availableFoodTags,
+                    );
+
                     final tagsToShow = _searchQuery.isNotEmpty
                         ? filteredFoodTags
-                        : state.rootTagsWithChildren;
+                        : structuredFoodTags;
 
                     return FoodTagsList(foodTags: tagsToShow);
                   },
